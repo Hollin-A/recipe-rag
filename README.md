@@ -17,7 +17,7 @@ The embedding model and chat model are each behind a small interface, chosen wit
 ## Progress
 
 - [x] 0. Embeddings playground
-- [ ] 1. Ingest
+- [x] 1. Ingest
 - [ ] 2. Retrieval: vector vs full-text
 - [ ] 3. Evaluation
 - [ ] 4. Generation with citations
@@ -41,6 +41,8 @@ npm install
 |---|---|---|
 | 0 | `npm run playground` | Similarity matrix for 12 sentences, and a sample search |
 | 0 | `EMBEDDER=fake npm run playground` | The same with a word-counting baseline (offline, no key) |
+| 1 | `npm run db:up`, `npm run db:migrate` | Starts Postgres + pgvector on port 5433 and creates the tables |
+| 1 | `npm run ingest` | Downloads the data and stores 400 Recipes with one Embedding each. Safe to re-run |
 
 `npm test` runs the unit tests and `npm run typecheck` type-checks the code. More detail on each stage is in [docs/PLAN.md](docs/PLAN.md).
 

@@ -10,13 +10,21 @@
     "node": ">=24"
   },
   "scripts": {
+    "db:up": "docker compose up -d --wait",
+    "db:migrate": "node --env-file-if-exists=.env src/scripts/migrate.ts",
     "playground": "node --env-file-if-exists=.env src/scripts/playground.ts",
+    "ingest": "node --env-file-if-exists=.env src/scripts/ingest.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
     "typescript": "^7.0.2",
     "vitest": "^5.1.0"
+  },
+  "dependencies": {
+    "pg": "^8.23.1",
+    "pgvector": "^0.3.1"
   }
 }

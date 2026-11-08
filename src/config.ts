@@ -25,3 +25,7 @@ export function voyageConfig() {
     model: process.env.VOYAGE_MODEL ?? "voyage-4",
   };
 }
+
+export function databaseUrl(): string {
+  return process.env.DATABASE_URL ?? "postgres://recipe:recipe@localhost:5433/recipe";
+}
