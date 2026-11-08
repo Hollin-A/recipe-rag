@@ -11,7 +11,7 @@ Vocabulary is in [GLOSSARY.md](../GLOSSARY.md). Decisions that are hard to rever
 | Language | TypeScript on Node 24, run directly with built-in type stripping | No build step; `tsc --noEmit` for type checks |
 | Database | Postgres 17 + pgvector, one container via `docker compose` | One database for both relational data and vectors; light enough for 8 GB RAM |
 | DB access | `pg` + `pgvector` helper, hand-written SQL, numbered `.sql` migrations | So the vector operators, full-text search and RRF stay visible |
-| Embeddings | Voyage AI `voyage-3.5` (1024 dims) behind an `Embedder` interface | Claude has no embeddings API |
+| Embeddings | Voyage AI `voyage-4` (1024 dims) behind an `Embedder` interface | Claude has no embeddings API |
 | Chat | Claude (`claude-sonnet-5-5`) behind a `ChatModel` interface | Swappable for Ollama in stage 8 |
 | Data | [Wikibooks Cookbook](https://huggingface.co/datasets/gossminn/wikibooks-cookbook) (CC BY-SA 4.0), a seeded sample of about 400 recipes | Real, human-written and openly licensed; no scraping |
 | UI | Terminal only (scripts plus a `readline` REPL) | A UI teaches nothing about RAG |

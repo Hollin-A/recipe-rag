@@ -1,0 +1,22 @@
+{
+  "name": "recipe-rag",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A recipe chatbot built from scratch to learn RAG and vector databases.",
+  "license": "MIT",
+  "author": "Hollin Ariyawansa",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "playground": "node --env-file-if-exists=.env src/scripts/playground.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}

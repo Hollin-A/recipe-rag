@@ -16,7 +16,7 @@ The embedding model and chat model are each behind a small interface, chosen wit
 
 ## Progress
 
-- [ ] 0. Embeddings playground
+- [x] 0. Embeddings playground
 - [ ] 1. Ingest
 - [ ] 2. Retrieval: vector vs full-text
 - [ ] 3. Evaluation
@@ -37,7 +37,12 @@ cp .env.example .env   # then fill in your keys
 npm install
 ```
 
-The commands for each stage are listed in [docs/PLAN.md](docs/PLAN.md). This section will grow as stages land.
+| Stage | Command | What you'll see |
+|---|---|---|
+| 0 | `npm run playground` | Similarity matrix for 12 sentences, and a sample search |
+| 0 | `EMBEDDER=fake npm run playground` | The same with a word-counting baseline (offline, no key) |
+
+`npm test` runs the unit tests and `npm run typecheck` type-checks the code. More detail on each stage is in [docs/PLAN.md](docs/PLAN.md).
 
 ## Data and attribution
 
@@ -47,4 +52,4 @@ The raw dataset is not committed: the ingest step downloads it. Each stored reci
 
 ## Licence
 
-The code licence is still to be decided. Recipe data is CC BY-SA 4.0, as described above.
+Code: [MIT](LICENSE). Recipe data: CC BY-SA 4.0, as described above.
